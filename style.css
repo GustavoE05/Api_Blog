@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz@6..72&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Newsreader', serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.container-fluid{
+ overflow-x: hidden;
+ padding: 0;
+}
+.banner{
+    width: 100%;
+    height: 15.972vw;
+}
+.banner img{
+    width: 17.014vw;
+    height: 15.972vw;
+}
+.nav{
+    height: 3.472vw;
+    border: solid 0.208vw black;
+}
+.nav .col-3 {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav .col-3:hover {
+    color: #4D4DFF; /* Cor do texto quando o mouse estiver sobre */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    cursor: pointer; /* Mude o cursor para indicar interatividade */
+}
+.col-md-12 {
+    height: 16.097vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    margin-left: 4vw;
+    background-color: white;
+}
+.col-md-4 {
+    height: 15.890vw;
+    width: 16.097vw;
+    
+}
+.col-md-4 img {
+    height: 15.890vw;
+    width: 16.097vw;
+    border-radius: 0.2vw;
+}
+.col-md-8 h6{
+    color: #4D4DFF;
+}
+.col-md-8 h2 {
+    font-size: 1.8vw;
+}
+
+.col-md-8 p {
+    font-size: 1.2vw;
+    margin-bottom: 0.5vw;
+}
+.row.post {
+    transition: transform 0.3s ease;
+}
+
+.row.post:hover {
+    transform: scale(1.02);
+}
+
+/* Sobre */
+
+.foto{
+    width: 38.154vw;
+    height: 38.154vw;
+    border-radius: 1.736vw;
+}
+.col-md-6{
+    margin-top: 3.815vw;
+}
