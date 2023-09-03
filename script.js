@@ -10,11 +10,23 @@ async function fetchAndShowPosts() {
     }
 }
 
+function abrirNoticia(event) {
+    
+    event.preventDefault(); 
+
+    const id = event.currentTarget.getAttribute('data-id'); 
+
+    const url = `indexIndividual.html?id=${id}`;
+
+    window.location.href = url;
+
+}
+
 function mostrar(posts) {
     const noticias = document.querySelector('.posts');
     noticias.innerHTML = '';
 
-    posts.forEach(post => {
+    posts.forEach((post, id) => {
         const thumbImageSrc = post.thumbImage.startsWith('/') ? `https://api-rest-post-diegocandido.herokuapp.com${post.thumbImage}` : post.thumbImage;
         const profileThumbImageSrc = post.profileThumbImage.startsWith('/') ? `https://api-rest-post-diegocandido.herokuapp.com${post.profileThumbImage}` : post.profileThumbImage;
         const postHTML = `
@@ -28,11 +40,18 @@ function mostrar(posts) {
                     <h2>${post.title}</h2>
                     <p>${post.description}</p>
                     <p>Por ${post.profileName}, ${post.postDate}</p>
-                    <p style="color: #4D4DFF"> ler mais </p>
+                     <p style="color: #4D4DFF">
+                        <a href="#" class="ler-mais" data-id="${id}">ler mais</a>
+                    </p>
                 </div>
             </div>
         </div>`;
         noticias.innerHTML += postHTML;
+    });
+
+    const lerMaisLinks = document.querySelectorAll('.ler-mais');
+    lerMaisLinks.forEach(link => {
+        link.addEventListener('click', abrirNoticia);
     });
 }
 
